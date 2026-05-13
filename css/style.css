@@ -385,6 +385,7 @@ section { padding: 100px 56px; position: relative; }
 #clients { background: var(--black); }
 .clients-intro { font-size: 17px; color: var(--muted); max-width: 560px; margin-bottom: 48px; line-height: 1.85; }
 .clients-showcase {
+  display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 28px;
 }
@@ -403,12 +404,15 @@ section { padding: 100px 56px; position: relative; }
   border-color: rgba(59,130,246,0.45);
 }
 
-/* สำคัญ */
 .client-feature img {
   width: 100%;
-  aspect-ratio: 16 / 10;
+  aspect-ratio: 16 / 12;
   object-fit: cover;
+  object-position: top;
+  display: block;
+  transition: transform 0.5s ease;
 }
+
 .client-feature:hover img {
   transform: scale(1.03);
 }
@@ -422,23 +426,12 @@ section { padding: 100px 56px; position: relative; }
   border-top: 1px solid rgba(255,255,255,0.04);
 }
 
-/* Tablet */
-@media (max-width: 1200px) {
-  .client-feature img {
-    height: 500px;
-  }
-}
-
-/* Mobile */
-@media (max-width: 768px) {
+@media (max-width: 900px) {
   .clients-showcase {
     grid-template-columns: 1fr;
   }
-
-  .client-feature img {
-    height: 380px;
-  }
 }
+
 .clients-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(190px, 1fr)); gap: 12px; }
 .client-chip {
   background: var(--card); border: 1px solid var(--border);
