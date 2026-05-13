@@ -60,29 +60,3 @@ window.addEventListener('scroll', () => {
     nav.style.padding = '16px 56px';
   }
 });
-// Navbar blur on scroll
-window.addEventListener('scroll', () => {
-  const nav = document.getElementById('mainNav');
-
-  if(window.scrollY > 40){
-    nav.style.background = 'rgba(8,10,14,0.82)';
-    nav.style.backdropFilter = 'blur(30px)';
-  } else {
-    nav.style.background = 'rgba(8,10,14,0.55)';
-    nav.style.backdropFilter = 'blur(24px)';
-  }
-});
-
-// Smooth reveal animation
-const observer = new IntersectionObserver((entries)=>{
-  entries.forEach(entry=>{
-    if(entry.isIntersecting){
-      entry.target.classList.add('visible');
-    }
-  });
-},{ threshold: 0.15 });
-
-
-document.querySelectorAll('.reveal').forEach(el=>{
-  observer.observe(el);
-});
