@@ -385,22 +385,59 @@ section { padding: 100px 56px; position: relative; }
 #clients { background: var(--black); }
 .clients-intro { font-size: 17px; color: var(--muted); max-width: 560px; margin-bottom: 48px; line-height: 1.85; }
 .clients-showcase {
-  display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-bottom: 40px;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 28px;
 }
+
 .client-feature {
-  background: var(--card); border: 1px solid var(--border);
-  border-radius: 14px; overflow: hidden;
-  transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  overflow: hidden;
+  transition: all 0.35s ease;
 }
+
 .client-feature:hover {
-  transform: translateY(-5px);
+  transform: translateY(-6px);
+  box-shadow: 0 18px 50px rgba(0,0,0,0.45);
   border-color: rgba(59,130,246,0.45);
-  box-shadow: 0 12px 40px rgba(0,0,0,0.35);
 }
-.client-feature img { width: 100%; height: 450px; object-fit: cover; object-position: top; display: block; }
+
+/* สำคัญ */
+.client-feature img {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+}
+.client-feature:hover img {
+  transform: scale(1.03);
+}
+
 .client-feature-name {
-  padding: 12px 16px; font-size: 13px; font-weight: 600;
-  color: var(--muted); border-top: 0.5px solid var(--border);
+  padding: 18px 20px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #d1d5db;
+  background: rgba(10,10,10,0.92);
+  border-top: 1px solid rgba(255,255,255,0.04);
+}
+
+/* Tablet */
+@media (max-width: 1200px) {
+  .client-feature img {
+    height: 500px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .clients-showcase {
+    grid-template-columns: 1fr;
+  }
+
+  .client-feature img {
+    height: 380px;
+  }
 }
 .clients-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(190px, 1fr)); gap: 12px; }
 .client-chip {
