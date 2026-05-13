@@ -508,3 +508,360 @@ footer .foot-brand { font-family: 'Black Han Sans', sans-serif; font-size: 16px;
   .contact-card { padding: 32px 24px; }
   footer { flex-direction: column; gap: 8px; text-align: center; padding: 24px; }
 }
+/* =========================================================
+   RESPONSIVE SYSTEM
+========================================================= */
+
+/* ---------- LARGE DESKTOP ---------- */
+@media (min-width: 1400px) {
+  section,
+  nav,
+  #hero,
+  footer {
+    padding-left: 80px;
+    padding-right: 80px;
+  }
+
+  .hero-name {
+    font-size: 92px;
+  }
+
+  .section-title {
+    font-size: 60px;
+  }
+
+  .hero-desc {
+    max-width: 620px;
+  }
+}
+
+/* ---------- TABLET ---------- */
+@media (max-width: 1199px) {
+
+  nav {
+    padding: 16px 32px;
+  }
+
+  section {
+    padding: 90px 32px;
+  }
+
+  #hero {
+    grid-template-columns: 1fr;
+    gap: 56px;
+    padding: 140px 32px 80px;
+    text-align: center;
+  }
+
+  .hero-left {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .hero-desc {
+    max-width: 720px;
+  }
+
+  .hero-cta {
+    justify-content: center;
+  }
+
+  .hero-right {
+    max-width: 760px;
+    margin: 0 auto;
+  }
+
+  .hero-laptop-frame {
+    transform: none;
+  }
+
+  .hero-stats {
+    max-width: 620px;
+    width: 100%;
+    margin-inline: auto;
+  }
+
+  .about-grid {
+    grid-template-columns: 1fr;
+    gap: 48px;
+    text-align: center;
+  }
+
+  .info-row {
+    justify-content: center;
+  }
+
+  .edu-grid,
+  .exp-wrap,
+  .proj-grid,
+  .clients-showcase {
+    grid-template-columns: 1fr;
+  }
+
+  .skills-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .edu-img {
+    height: 360px;
+  }
+
+  .proj-thumb {
+    height: 300px;
+  }
+
+  .contact-card {
+    padding: 44px 32px;
+  }
+
+  footer {
+    padding: 28px 32px;
+  }
+}
+
+/* ---------- MOBILE ---------- */
+@media (max-width: 767px) {
+
+  :root {
+    --mobile-padding: 20px;
+  }
+
+  body {
+    font-size: 15px;
+    line-height: 1.6;
+  }
+
+  nav {
+    padding: 14px var(--mobile-padding);
+  }
+
+  .nav-logo {
+    font-size: 18px;
+  }
+
+  .nav-links {
+    display: none;
+  }
+
+  section {
+    padding: 72px var(--mobile-padding);
+  }
+
+  #hero {
+    padding: 120px var(--mobile-padding) 60px;
+    gap: 40px;
+    min-height: auto;
+  }
+
+  .hero-tag {
+    font-size: 11px;
+    padding: 6px 14px;
+    margin-bottom: 22px;
+  }
+
+  .hero-name {
+    font-size: clamp(40px, 14vw, 58px);
+    line-height: 1.05;
+  }
+
+  .hero-subtitle {
+    font-size: 14px;
+  }
+
+  .hero-desc {
+    font-size: 15px;
+    line-height: 1.8;
+    margin-bottom: 32px;
+  }
+
+  .hero-cta {
+    width: 100%;
+    flex-direction: column;
+  }
+
+  .btn {
+    width: 100%;
+    text-align: center;
+    padding: 14px 20px;
+  }
+
+  .hero-right {
+    display: block;
+  }
+
+  .hero-laptop-frame {
+    border-radius: 14px;
+    transform: none;
+  }
+
+  .hero-stats {
+    grid-template-columns: 1fr;
+  }
+
+  .stat-pill {
+    padding: 16px;
+  }
+
+  .section-label {
+    font-size: 10px;
+  }
+
+  .section-title {
+    font-size: clamp(30px, 10vw, 42px);
+    margin-bottom: 40px;
+  }
+
+  .about-grid {
+    gap: 36px;
+  }
+
+  .profile-img {
+    width: 220px;
+    height: 220px;
+  }
+
+  .profile-ring {
+    inset: -8px;
+  }
+
+  .profile-badge {
+    right: 0;
+    bottom: 10px;
+    font-size: 11px;
+  }
+
+  .info-grid {
+    gap: 10px;
+  }
+
+  .info-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+    text-align: left;
+  }
+
+  .info-label {
+    min-width: auto;
+  }
+
+  .skills-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .skill-card {
+    padding: 24px;
+  }
+
+  .edu-card,
+  .proj-card,
+  .exp-card,
+  .exp-timeline,
+  .contact-card {
+    border-radius: 16px;
+  }
+
+  .edu-img {
+    height: 260px;
+  }
+
+  .proj-thumb {
+    height: 220px;
+  }
+
+  .proj-body,
+  .edu-body {
+    padding: 18px;
+  }
+
+  .exp-card {
+    padding: 28px 22px;
+  }
+
+  .exp-company {
+    font-size: 24px;
+  }
+
+  .exp-timeline {
+    padding: 24px 20px;
+  }
+
+  .clients-intro {
+    font-size: 15px;
+    margin-bottom: 32px;
+  }
+
+  .clients-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .client-feature-name {
+    font-size: 13px;
+    padding: 16px;
+  }
+
+  .contact-card {
+    padding: 32px 20px;
+  }
+
+  .contact-row {
+    padding: 14px 16px;
+    gap: 14px;
+  }
+
+  .contact-icon-wrap {
+    width: 38px;
+    height: 38px;
+    font-size: 18px;
+  }
+
+  .contact-val {
+    font-size: 14px;
+    word-break: break-word;
+  }
+
+  footer {
+    flex-direction: column;
+    gap: 10px;
+    text-align: center;
+    padding: 24px 20px;
+  }
+
+  .cursor-glow {
+    display: none;
+  }
+
+  .hero-grid-lines {
+    opacity: 0.4;
+  }
+}
+
+/* ---------- SMALL MOBILE ---------- */
+@media (max-width: 420px) {
+
+  .hero-name {
+    font-size: 36px;
+  }
+
+  .section-title {
+    font-size: 28px;
+  }
+
+  .profile-img {
+    width: 190px;
+    height: 190px;
+  }
+
+  .btn {
+    font-size: 14px;
+  }
+
+  .exp-company {
+    font-size: 21px;
+  }
+
+  .proj-thumb {
+    height: 190px;
+  }
+}
