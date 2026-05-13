@@ -406,7 +406,7 @@ section { padding: 100px 56px; position: relative; }
 
 .client-feature img {
   width: 100%;
-  aspect-ratio: 16 / 12;
+  aspect-ratio: 16 / 9;
   object-fit: cover;
   object-position: top;
   display: block;
