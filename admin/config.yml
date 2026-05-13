@@ -1,6 +1,6 @@
-
 backend:
-  name: git-gateway
+  name: github
+  repo: tanadolforwork-crypto/Portfolio
   branch: main
 
 media_folder: "assets/uploads"
@@ -21,11 +21,14 @@ collections:
 
   - name: "projects"
     label: "Projects"
-    file: "content/projects.json"
-    fields:
-      - label: "รายการโปรเจกต์"
+    files:
+      - file: "content/projects.json"
+        label: "Project List"
         name: "projects"
-        widget: "list"
         fields:
-          - { label: "ชื่อโปรเจกต์", name: "title", widget: "string" }
-          - { label: "รายละเอียด", name: "description", widget: "text" }
+          - label: "รายการโปรเจกต์"
+            name: "items"
+            widget: "list"
+            fields:
+              - { label: "ชื่อโปรเจกต์", name: "title", widget: "string" }
+              - { label: "รายละเอียด", name: "description", widget: "text" }
