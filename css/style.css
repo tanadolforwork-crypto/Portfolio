@@ -41,6 +41,29 @@ nav {
   border-bottom: 0.5px solid var(--border);
   transition: padding 0.3s;
 }
+/* Hamburger button */
+.nav-toggle {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 6px;
+  z-index: 201;
+}
+.nav-toggle span {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: var(--text);
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+.nav-toggle.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.nav-toggle.open span:nth-child(2) { opacity: 0; transform: scaleX(0); }
+.nav-toggle.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
 .nav-logo {
   font-size: 20px; font-weight: 800; color: var(--blue-bright);
   letter-spacing: 0.06em; text-decoration: none;
@@ -215,6 +238,13 @@ section { padding: 100px 56px; position: relative; }
 .reveal-delay-2 { transition-delay: 0.2s; }
 .reveal-delay-3 { transition-delay: 0.3s; }
 .reveal-delay-4 { transition-delay: 0.4s; }
+.reveal-delay-5 { transition-delay: 0.5s; }
+.reveal-delay-6 { transition-delay: 0.6s; }
+.reveal-delay-7 { transition-delay: 0.7s; }
+.reveal-delay-8 { transition-delay: 0.8s; }
+.reveal-delay-9 { transition-delay: 0.9s; }
+.reveal-delay-10 { transition-delay: 1.0s; }
+.reveal-delay-11 { transition-delay: 1.1s; }
 
 /* === ABOUT === */
 #about { background: var(--dark); }
@@ -273,7 +303,7 @@ section { padding: 100px 56px; position: relative; }
   transform: translateY(-6px);
   box-shadow: 0 16px 48px rgba(59,130,246,0.15);
 }
-.edu-img { width: 100%; height: 500px; object-fit: cover; display: block; }
+.edu-img { width: 100%; height: 220px; object-fit: cover; display: block; }
 .edu-body { padding: 24px; }
 .edu-year {
   display: inline-block;
@@ -350,7 +380,8 @@ section { padding: 100px 56px; position: relative; }
 .tl-text { font-size: 14px; color: var(--muted); line-height: 1.5; }
 
 /* === PROJECTS === */
-#projects { background: var(--dark); }
+#college-projects { background: var(--dark); }
+#work-projects { background: var(--black); }
 .proj-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; }
 .proj-card {
   background: var(--card); border: 1px solid var(--border);
@@ -363,7 +394,7 @@ section { padding: 100px 56px; position: relative; }
   box-shadow: 0 20px 60px rgba(0,0,0,0.4), 0 0 30px rgba(59,130,246,0.1);
   border-color: rgba(59,130,246,0.45);
 }
-.proj-thumb { position: relative; overflow: hidden; height: 400px; }
+.proj-thumb { position: relative; overflow: hidden; height: 230px; }
 .proj-thumb img { width: 100%; height: 100%; object-fit: cover; object-position: top; transition: transform 0.5s ease; display: block; }
 .proj-card:hover .proj-thumb img { transform: scale(1.06); }
 .proj-overlay {
@@ -382,7 +413,6 @@ section { padding: 100px 56px; position: relative; }
 .proj-desc { font-size: 14px; color: var(--muted); line-height: 1.65; }
 
 /* === CLIENTS === */
-#clients { background: var(--black); }
 .clients-intro { font-size: 17px; color: var(--muted); max-width: 560px; margin-bottom: 48px; line-height: 1.85; }
 .clients-showcase {
   display: grid;
@@ -497,7 +527,31 @@ footer .foot-brand { font-family: 'Black Han Sans', sans-serif; font-size: 16px;
 
 @media (max-width: 900px) {
   nav { padding: 14px 24px; }
-  .nav-links { display: none; }
+  /* แสดง hamburger */
+  .nav-toggle { display: flex; }
+  /* nav links เป็น drawer */
+  .nav-links {
+    position: fixed;
+    top: 57px; left: 0; right: 0;
+    background: rgba(8,10,14,0.97);
+    backdrop-filter: blur(20px);
+    flex-direction: column;
+    gap: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.35s ease;
+    border-bottom: 0.5px solid var(--border);
+    z-index: 199;
+  }
+  .nav-links.open { max-height: 500px; }
+  .nav-links li { border-bottom: 0.5px solid rgba(255,255,255,0.05); }
+  .nav-links a {
+    display: block;
+    padding: 15px 24px;
+    font-size: 15px;
+  }
+  .nav-links a::after { display: none; }
+
   section { padding: 80px 24px; }
   #hero { grid-template-columns: 1fr; padding: 100px 24px 60px; gap: 40px; }
   .hero-right { display: none; }
@@ -543,6 +597,26 @@ footer .foot-brand { font-family: 'Black Han Sans', sans-serif; font-size: 16px;
     padding: 16px 32px;
   }
 
+  /* ซ่อน nav links ปกติ ใช้ hamburger แทน */
+  .nav-toggle { display: flex; }
+  .nav-links {
+    position: fixed;
+    top: 57px; left: 0; right: 0;
+    background: rgba(8,10,14,0.97);
+    backdrop-filter: blur(20px);
+    flex-direction: column;
+    gap: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.35s ease;
+    border-bottom: 0.5px solid var(--border);
+    z-index: 199;
+  }
+  .nav-links.open { max-height: 500px; }
+  .nav-links li { border-bottom: 0.5px solid rgba(255,255,255,0.05); }
+  .nav-links a { display: block; padding: 15px 32px; font-size: 15px; }
+  .nav-links a::after { display: none; }
+
   section {
     padding: 90px 32px;
   }
@@ -569,6 +643,7 @@ footer .foot-brand { font-family: 'Black Han Sans', sans-serif; font-size: 16px;
   }
 
   .hero-right {
+    display: block;
     max-width: 760px;
     margin: 0 auto;
   }
@@ -605,11 +680,11 @@ footer .foot-brand { font-family: 'Black Han Sans', sans-serif; font-size: 16px;
   }
 
   .edu-img {
-    height: 360px;
+    height: 280px;
   }
 
   .proj-thumb {
-    height: 300px;
+    height: 260px;
   }
 
   .contact-card {
@@ -764,11 +839,11 @@ footer .foot-brand { font-family: 'Black Han Sans', sans-serif; font-size: 16px;
   }
 
   .edu-img {
-    height: 260px;
+    height: 200px;
   }
 
   .proj-thumb {
-    height: 220px;
+    height: 200px;
   }
 
   .proj-body,
