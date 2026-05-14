@@ -5,14 +5,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Portfolio-Tanadol Wanbanjob</title>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Sarabun:wght@300;400;600;700;800&family=Black+Han+Sans&display=swap"
-    rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css">
+  <!-- preconnect ก่อนเสมอ เพื่อ performance -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@300;400;600;700;800&family=Black+Han+Sans&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-  <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;600&family=Plus+Jakarta+Sans:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
@@ -23,7 +21,11 @@
   <!-- NAV -->
   <nav id="mainNav">
     <a class="nav-logo" href="#hero">Portfolio-Tanadol</a>
-    <ul class="nav-links">
+    <!-- Hamburger (mobile) -->
+    <button class="nav-toggle" id="navToggle" aria-label="เปิดเมนู">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links" id="navLinks">
       <li><a href="#about">เกี่ยวกับฉัน</a></li>
       <li><a href="#education">การศึกษา</a></li>
       <li><a href="#skills">ทักษะ</a></li>
@@ -45,18 +47,13 @@
       </div>
       <h1 class="hero-name">ธนดล<br><span class="blue">วันบรรจบ</span></h1>
       <p class="hero-subtitle">นายธนดล วันบรรจบ &nbsp;·&nbsp; "ดิว" &nbsp;·&nbsp; อายุ 26 ปี</p>
-      <p class="hero-desc">Webmaster ผู้ดูแลเว็บไซต์ อัพเดตข้อมูลเว็บไซต์ให้ตรงความต้องการของลูกค้า
-        มีความรู้ความเข้าใจในภาษา HTML, CSS และแก้ไขปัญหาระบบ Hardware &amp; Software ของคอมพิวเตอร์
-        สนับสนุนงานไอทีที่มีประสบการณ์การทำงานร่วมกับองค์กรระดับมหาชน มีทักษะในการบริหารจัดการเนื้อหาเว็บไซต์ (CMS)
-        และการจัดการระบบ Helpdesk มุ่งเน้นการปรับปรุงเว็บไซต์ให้มีประสิทธิภาพตามหลัก SEO และพร้อมเรียนรู้นวัตกรรมใหม่ๆ
-        เพื่อขับเคลื่อนองค์กร</p>
+      <p class="hero-desc">Webmaster ผู้ดูแลเว็บไซต์ อัพเดตข้อมูล และบริหารจัดการเนื้อหาผ่าน CMS ให้กับองค์กรระดับมหาชน พร้อมทักษะ IT Support แก้ปัญหา Hardware &amp; Software</p>
       <div class="hero-cta">
         <a href="#work-projects" class="btn btn-primary">ดูผลงาน</a>
         <a href="#contact" class="btn btn-outline">ติดต่อฉัน</a>
       </div>
     </div>
 
-   
     <div class="hero-right">
       <div class="hero-laptop-frame">
         <img src="/Portfolio/assets/notebook-1.webp" alt="Coding laptop" loading="eager">
@@ -75,6 +72,20 @@
           <div class="stat-lbl"></div>
         </div>
       </div> -->
+      <div class="hero-stats">
+        <div class="stat-pill">
+          <div class="stat-num">2+</div>
+          <div class="stat-lbl">ปีประสบการณ์</div>
+        </div>
+        <div class="stat-pill">
+          <div class="stat-num">12+</div>
+          <div class="stat-lbl">บริษัทชั้นนำ</div>
+        </div>
+        <div class="stat-pill">
+          <div class="stat-num">4+</div>
+          <div class="stat-lbl">โปรเจค</div>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -342,28 +353,28 @@
       <p class="contact-subtitle">พร้อมรับโอกาสใหม่ ๆ เสมอ อย่าลังเลที่จะติดต่อมาเลย</p>
       <div class="contact-items">
         <div class="contact-row">
-          <div class="contact-icon-wrap">📧</div>
+          <div class="contact-icon-wrap"><i class="fa-solid fa-envelope"></i></div>
           <div>
             <div class="contact-label">อีเมล</div>
             <div class="contact-val"><a href="mailto:tanadol.forwork@gmail.com">tanadol.forwork@gmail.com</a></div>
           </div>
         </div>
         <div class="contact-row">
-          <div class="contact-icon-wrap">📱</div>
+          <div class="contact-icon-wrap"><i class="fa-solid fa-phone"></i></div>
           <div>
             <div class="contact-label">โทรศัพท์</div>
             <div class="contact-val">065-463-6097</div>
           </div>
         </div>
         <div class="contact-row">
-          <div class="contact-icon-wrap">💬</div>
+          <div class="contact-icon-wrap"><i class="fa-brands fa-facebook"></i></div>
           <div>
             <div class="contact-label">Facebook</div>
             <div class="contact-val">Dew Tanadol</div>
           </div>
         </div>
         <div class="contact-row">
-          <div class="contact-icon-wrap">📍</div>
+          <div class="contact-icon-wrap"><i class="fa-solid fa-location-dot"></i></div>
           <div>
             <div class="contact-label">ที่อยู่</div>
             <div class="contact-val">6/1 ม.7 ต.บางระกำ อ.บางเลน จ.นครปฐม 73130</div>
@@ -379,6 +390,22 @@
   </footer>
 
   <script src="js/main.js"></script>
+  <script>
+    // Hamburger menu toggle
+    const navToggle = document.getElementById('navToggle');
+    const navLinks  = document.getElementById('navLinks');
+    navToggle?.addEventListener('click', () => {
+      navToggle.classList.toggle('open');
+      navLinks.classList.toggle('open');
+    });
+    // ปิดเมนูเมื่อคลิก link
+    navLinks?.querySelectorAll('a').forEach(a => {
+      a.addEventListener('click', () => {
+        navToggle.classList.remove('open');
+        navLinks.classList.remove('open');
+      });
+    });
+  </script>
 </body>
 
 </html>
